@@ -1,4 +1,3 @@
-/* Figma Color Variables of your File */
 :root,
 [data-variable-collection-mode="mode-1"] {
   /* mode-1 */
@@ -3440,9 +3439,7 @@ body {
   top: 1125px;
 }
 
-/* ================================
-   TAMBAHAN: navbar aktif + interaksi
-   ================================ */
+/*navbar aktif + interaksi*/
 a.home, a.about, a.skills, a.project, a.journey, a.contact,
 a.about-me2, a.my-journey2, a.projects, a.contacts {
   text-decoration: none;
@@ -3473,9 +3470,7 @@ a.about-me2, a.my-journey2, a.projects, a.contacts {
   cursor: pointer;
 }
 
-/* ================================
-   TAMBAHAN: hover ikon kontak & sosial media
-   ================================ */
+/*hover ikon kontak & sosial media */
 .contact-link {
   cursor: pointer;
 }
@@ -3499,9 +3494,7 @@ a[href*="github.com"]:hover img {
   transform: scale(1.15);
 }
 
-/* ================================
-   TAMBAHAN: tech stack marquee
-   ================================ */
+/*tech stack marquee*/
 .tech-marquee-wrap {
   position: absolute;
   left: 50%;
@@ -3560,4 +3553,303 @@ a[href*="github.com"]:hover img {
 @keyframes marquee-right {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
+}
+
+
+:root {
+  --mobile-gutter: 20px;
+  --tablet-gutter: 32px;
+  --desktop-max: 1440px;
+  --section-space: clamp(64px, 8vw, 120px);
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+a {
+  max-width: 100%;
+}
+
+.portofolio {
+  width: 100% !important;
+  max-width: var(--desktop-max) !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.portofolio > * {
+  max-width: 100%;
+}
+
+/*Mobile menu button*/
+.mobile-menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 99px;
+  background: currentColor;
+}
+
+/*TABLET: 769px - 1100px*/
+@media (max-width: 1100px) {
+
+  .portofolio {
+    max-width: 100% !important;
+    padding-left: var(--tablet-gutter) !important;
+    padding-right: var(--tablet-gutter) !important;
+  }
+
+  .home, .about, .skills, .journey, .project, .contact,
+  .github, .instagram, .linked-in, .whats-app,
+  .rectangle-27, .rectangle-196 {
+    max-width: 100%;
+  }
+
+  /* Typography */
+  .hello-there,
+  .ni-putu-putri-raismayanti,
+  .a-passionate-rpl,
+  .about-me,
+  .tech-stack,
+  .my-project,
+  .journey2,
+  .contact2 {
+    max-width: 100%;
+  }
+}
+
+/*MOBILE: <= 768px*/
+@media (max-width: 768px) {
+
+  :root {
+    --mobile-gutter: 16px;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  .portofolio {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 var(--mobile-gutter) !important;
+    margin: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    position: fixed;
+    top: 14px;
+    right: 14px;
+  }
+
+  .mobile-nav-ready .navlink,
+  .mobile-nav-ready .home,
+  .mobile-nav-ready .about,
+  .mobile-nav-ready .skills,
+  .mobile-nav-ready .journey,
+  .mobile-nav-ready .project,
+  .mobile-nav-ready .contact {
+    display: none;
+  }
+
+  .mobile-nav-ready.mobile-open .navlink,
+  .mobile-nav-ready.mobile-open .home,
+  .mobile-nav-ready.mobile-open .about,
+  .mobile-nav-ready.mobile-open .skills,
+  .mobile-nav-ready.mobile-open .journey,
+  .mobile-nav-ready.mobile-open .project,
+  .mobile-nav-ready.mobile-open .contact {
+    display: block;
+  }
+
+  .portofolio [class] {
+    max-width: 100%;
+  }
+
+  .portofolio h1,
+  .portofolio h2,
+  .portofolio h3,
+  .portofolio h4,
+  .portofolio p,
+  .portofolio span,
+  .portofolio a,
+  .portofolio div {
+    overflow-wrap: anywhere;
+  }
+
+  .hello-there,
+  .ni-putu-putri-raismayanti,
+  .a-passionate-rpl {
+    white-space: normal !important;
+  }
+
+  .portofolio img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  input,
+  textarea {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button,
+  .rectangle-27,
+  .download-cv,
+  .download {
+    max-width: 100%;
+  }
+
+  .projects,
+  .project-grid,
+  .project-container,
+  .cards,
+  .project-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  .hero,
+  .about-section,
+  .skills-section,
+  .journey-section,
+  .contact-section,
+  .project-section {
+    flex-direction: column !important;
+  }
+
+  .ni-putu-putri-raismayanti {
+    font-size: clamp(30px, 9vw, 54px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hello-there {
+    font-size: clamp(28px, 8vw, 48px) !important;
+  }
+
+  .portofolio {
+    isolation: isolate;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .portofolio {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .mobile-menu-toggle {
+    top: 10px;
+    right: 10px;
+  }
+
+  .ni-putu-putri-raismayanti {
+    font-size: clamp(26px, 9vw, 42px) !important;
+  }
+
+  .hello-there {
+    font-size: clamp(24px, 8vw, 36px) !important;
+  }
+
+  .a-passionate-rpl {
+    font-size: clamp(14px, 4vw, 18px) !important;
+    line-height: 1.6 !important;
+  }
+
+  .portofolio button,
+  .portofolio .rectangle-27,
+  .portofolio .download-cv,
+  .portofolio .download {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .portofolio {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .ni-putu-putri-raismayanti {
+    font-size: 26px !important;
+  }
+
+  .hello-there {
+    font-size: 24px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
