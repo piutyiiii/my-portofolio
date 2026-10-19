@@ -194,11 +194,23 @@ textarea {
   line-height: 26px;
 }
 
-.navlink.active {
+body:not(:has(:target)) .navlink[href="#home"],
+body:has(#home:target) .navlink[href="#home"],
+body:has(#about:target) .navlink[href="#about"],
+body:has(#skills:target) .navlink[href="#skills"],
+body:has(#journey:target) .navlink[href="#journey"],
+body:has(#project:target) .navlink[href="#project"],
+body:has(#contact:target) .navlink[href="#contact"] {
   color: var(--rose);
 }
 
-.navlink.active::after {
+body:not(:has(:target)) .navlink[href="#home"]::after,
+body:has(#home:target) .navlink[href="#home"]::after,
+body:has(#about:target) .navlink[href="#about"]::after,
+body:has(#skills:target) .navlink[href="#skills"]::after,
+body:has(#journey:target) .navlink[href="#journey"]::after,
+body:has(#project:target) .navlink[href="#project"]::after,
+body:has(#contact:target) .navlink[href="#contact"]::after {
   content: "";
   position: absolute;
   left: 0;
@@ -215,7 +227,8 @@ textarea {
   font-size: 15px;
 }
 
-.mobile-menu-toggle {
+.mobile-menu-toggle,
+.menu-checkbox {
   display: none;
 }
 
@@ -833,6 +846,21 @@ textarea {
     min-height: 60px;
   }
 
+  .menu-checkbox {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .menu-checkbox:focus-visible + .mobile-menu-toggle {
+    outline: 2px solid var(--rose);
+  }
+
   .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
@@ -857,15 +885,15 @@ textarea {
     transition: transform 0.25s, opacity 0.25s;
   }
 
-  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  .menu-checkbox:checked + .mobile-menu-toggle span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
 
-  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  .menu-checkbox:checked + .mobile-menu-toggle span:nth-child(2) {
     opacity: 0;
   }
 
-  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  .menu-checkbox:checked + .mobile-menu-toggle span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
@@ -883,7 +911,7 @@ textarea {
     box-shadow: 0 12px 24px rgba(104, 24, 59, 0.1);
   }
 
-  .main-nav.mobile-open {
+  .menu-checkbox:checked ~ .main-nav {
     display: flex;
   }
 
@@ -892,8 +920,8 @@ textarea {
     border-bottom: 1px solid var(--soft-pink);
   }
 
-  .navlink.active::after {
-    display: none;
+  .navlink::after {
+    display: none !important;
   }
 
   .download-cv {
