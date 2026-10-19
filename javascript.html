@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Putri Raismayanti - Tugas JavaScript</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* tambahan khusus halaman javascript (style.css tidak diubah) */
+
+    /* menu JavaScript ditandai sebagai halaman yang sedang dibuka */
+    .navlink.aktif {
+      color: var(--rose);
+    }
+
+    .navlink.aktif::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      background: var(--rose);
+      border-radius: 2px;
+    }
+
+    /* isi halaman diletakkan di tengah layar */
+    .halaman-js {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .halaman-js .js-container {
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- navbar -->
+<header class="site-header">
+  <div class="container nav-bar">
+    <input type="checkbox" id="mobile-menu-toggle" class="menu-checkbox" aria-label="Open menu" />
+    <label for="mobile-menu-toggle" class="mobile-menu-toggle"><span></span><span></span><span></span></label>
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html#home" class="navlink">Home</a>
+      <a href="index.html#about" class="navlink">About</a>
+      <a href="index.html#skills" class="navlink">Skills</a>
+      <a href="index.html#project" class="navlink">Project</a>
+      <a href="index.html#journey" class="navlink">Journey</a>
+      <a href="javascript.html" class="navlink aktif">JavaScript</a>
+      <a href="index.html#contact" class="navlink">Contact</a>
+      <!-- Link CV belum dibuat: -->
+      <a href="#" class="btn btn-primary download-cv"><img src="download0.png" alt="" />Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- tugas javascript: poin I (latihan praktik) dan poin J (tantangan mini) -->
+  <section class="section container center halaman-js">
+    <span class="pill">Belajar JavaScript</span>
+    <h2 class="title">Latihan Praktik JavaScript</h2>
+    <p class="body-text sub">Pilih latihan (poin I nomor 1 sampai 5, atau poin J Tantangan Mini), isi datanya, lalu klik Jalankan. Hasilnya tampil di bawah dan juga di Console browser (F12).</p>
+
+    <div class="js-container card">
+      <div class="js-tabs" id="js-tabs" role="tablist" aria-label="Pilih latihan"></div>
+      <h3 class="js-task" id="js-task"></h3>
+      <p class="body-text js-desc" id="js-desc"></p>
+      <div class="js-form" id="js-form"></div>
+      <pre class="js-code"><code id="js-code"></code></pre>
+      <button type="button" id="js-run" class="btn btn-primary js-run">&#9654; Jalankan</button>
+      <pre class="js-console" id="js-console" aria-live="polite"></pre>
+      <p class="body-text js-note" id="js-note" hidden></p>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-name">Putri Raismayanti</div>
+    <nav class="footer-nav">
+      <a href="index.html#about">About Me</a>
+      <a href="index.html#journey">My Journey</a>
+      <a href="index.html#project">Projects</a>
+      <a href="index.html#contact">Contacts</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://instagram.com/putrirsmynti_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="instagram2.png" alt="Instagram" /></a>
+      <a href="https://github.com/piutyiiii" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="git-hub14.png" alt="GitHub" /></a>
+    </div>
+    <div class="footer-copy">© 2026 Putri Raismayanti.<br />All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// ambil elemen berdasarkan id
+function ambil(id) {
+  return document.getElementById(id);
+}
+
+// ubah isian jadi teks berkutip, kalau kosong tampil "..."
+function teks(nilai) {
+  nilai = String(nilai).trim();
+  if (nilai == "") {
+    return '"..."';
+  }
+  return JSON.stringify(nilai);
+}
+
+// ubah isian jadi angka, kalau kosong / bukan angka tampil ...
+function angka(nilai) {
+  nilai = String(nilai).trim();
+  if (nilai != "" && isFinite(Number(nilai))) {
+    return Number(nilai);
+  }
+  return "...";
+}
+
+// daftar latihan. kode yang tampil di layar = kode yang dijalankan
+var TUGAS = [
+  {
+    tab: "I.1 Nama & Kelas",
+    judul: "Poin I.1 - Nama Lengkap dan Kelas",
+    soal: "Tampilkan teks nama lengkap dan kelas menggunakan console.log().",
+    fields: [
+      { id: "nama", label: "Nama lengkap", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
+      { id: "kelas", label: "Kelas", type: "text", value: "", placeholder: "Contoh: XI RPL" }
+    ],
+    kode: function (v) {
+      return `let nama = ${teks(v.nama)};
+let kelas = ${teks(v.kelas)};
+
+console.log("Nama lengkap: " + nama);
+console.log("Kelas: " + kelas);`;
+    }
+  },
+  {
+    tab: "I.2 Variabel",
+    judul: "Poin I.2 - Variabel Nama, Umur, dan Jurusan",
+    soal: "Buat variabel nama, umur, dan jurusan. Tampilkan ketiganya.",
+    fields: [
+      { id: "nama", label: "Nama", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
+      { id: "umur", label: "Umur", type: "number", value: "", placeholder: "Contoh: 16" },
+      { id: "jurusan", label: "Jurusan", type: "text", value: "", placeholder: "Contoh: Rekayasa Perangkat Lunak" }
+    ],
+    kode: function (v) {
+      return `let nama = ${teks(v.nama)};
+let umur = ${angka(v.umur)};
+let jurusan = ${teks(v.jurusan)};
+
+console.log(nama);
+console.log(umur);
+console.log(jurusan);`;
+    }
+  },
+  {
+    tab: "I.3 Operator",
+    judul: "Poin I.3 - Operasi Dua Angka",
+    soal: "Buat dua variabel angka, lalu tampilkan hasil penjumlahan, pengurangan, perkalian, dan pembagian.",
+    fields: [
+      { id: "a", label: "Angka pertama", type: "number", value: "", placeholder: "Contoh: 20" },
+      { id: "b", label: "Angka kedua", type: "number", value: "", placeholder: "Contoh: 4" }
+    ],
+    kode: function (v) {
+      return `let angka1 = ${angka(v.a)};
+let angka2 = ${angka(v.b)};
+
+console.log("Penjumlahan: " + (angka1 + angka2));
+console.log("Pengurangan: " + (angka1 - angka2));
+console.log("Perkalian: " + (angka1 * angka2));
+console.log("Pembagian: " + (angka1 / angka2));`;
+    }
+  },
+  {
+    tab: "I.4 if...else",
+    judul: "Poin I.4 - if...else dengan Nilai 90",
+    soal: 'Buat variabel nilai = 90. Gunakan if...else untuk menampilkan "Lulus" jika nilai minimal 75 dan "Belum lulus" jika kurang dari 75.',
+    fields: [
+      { id: "nilai", label: "Nilai", type: "number", value: "90", placeholder: "Contoh: 90" }
+    ],
+    kode: function (v) {
+      return `let nilai = ${angka(v.nilai)};
+
+if (nilai >= 75) {
+  console.log("Lulus");
+} else {
+  console.log("Belum lulus");
+}`;
+    }
+  },
+  {
+    tab: "I.5 Ubah Nilai",
+    judul: "Poin I.5 - Ubah Nilai Menjadi 60",
+    soal: "Ubah nilai menjadi 60. Jalankan kembali program dan jelaskan perbedaannya.",
+    fields: [
+      { id: "nilai", label: "Nilai", type: "number", value: "60", placeholder: "Contoh: 60" }
+    ],
+    kode: function (v) {
+      return `let nilai = ${angka(v.nilai)};
+
+if (nilai >= 75) {
+  console.log("Lulus");
+} else {
+  console.log("Belum lulus");
+}`;
+    },
+    catatan: "Perbedaannya: dengan nilai 90, kondisi nilai >= 75 bernilai true sehingga blok if berjalan dan tampil \"Lulus\". Setelah nilai diubah menjadi 60, kondisi bernilai false sehingga blok else yang berjalan dan tampil \"Belum lulus\". Kodenya sama, hanya nilainya yang berbeda."
+  },
+  {
+    tab: "J. Tantangan Mini",
+    judul: "Poin J - Tantangan Mini",
+    soal: "Simpan nama dan nilai siswa, lalu tampilkan nama serta status kelulusannya di Console.",
+    fields: [
+      { id: "nama", label: "Nama siswa", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
+      { id: "nilai", label: "Nilai", type: "number", value: "", placeholder: "Contoh: 85" }
+    ],
+    kode: function (v) {
+      return `let nama = ${teks(v.nama)};
+let nilai = ${angka(v.nilai)};
+let status;
+
+if (nilai >= 75) {
+  status = "Lulus";
+} else {
+  status = "Belum lulus";
+}
+
+console.log("Nama: " + nama);
+console.log("Nilai: " + nilai);
+console.log("Status: " + status);`;
+    }
+  }
+];
+
+// simpan isian tiap latihan supaya tidak hilang waktu pindah tab
+var isian = [];
+for (var i = 0; i < TUGAS.length; i++) {
+  var data = {};
+  for (var j = 0; j < TUGAS[i].fields.length; j++) {
+    data[TUGAS[i].fields[j].id] = TUGAS[i].fields[j].value;
+  }
+  isian.push(data);
+}
+
+var aktif = 0; // tab yang sedang dibuka
+
+function tampilkanKode() {
+  ambil("js-code").textContent = TUGAS[aktif].kode(isian[aktif]);
+}
+
+function tampilkanTugas() {
+  var t = TUGAS[aktif];
+
+  // tandai tab yang aktif
+  var semuaTab = document.querySelectorAll(".js-tab");
+  for (var i = 0; i < semuaTab.length; i++) {
+    semuaTab[i].setAttribute("aria-selected", i == aktif ? "true" : "false");
+  }
+
+  ambil("js-task").textContent = t.judul;
+  ambil("js-desc").textContent = t.soal;
+  ambil("js-note").hidden = !t.catatan;
+  ambil("js-note").textContent = t.catatan || "";
+  ambil("js-console").textContent = "Klik Jalankan untuk melihat output...";
+
+  // buat form isian
+  var form = ambil("js-form");
+  form.textContent = "";
+  for (var k = 0; k < t.fields.length; k++) {
+    buatField(form, t.fields[k]);
+  }
+
+  tampilkanKode();
+}
+
+function buatField(form, f) {
+  var label = document.createElement("label");
+  label.textContent = f.label;
+
+  var input = document.createElement("input");
+  input.type = f.type;
+  input.placeholder = f.placeholder;
+  input.value = isian[aktif][f.id];
+
+  // kode ikut berubah waktu diketik
+  input.addEventListener("input", function () {
+    isian[aktif][f.id] = input.value;
+    tampilkanKode();
+  });
+
+  label.appendChild(input);
+  form.appendChild(label);
+}
+
+function jalankan() {
+  // cek dulu ada isian yang masih kosong atau tidak
+  var fields = TUGAS[aktif].fields;
+  for (var i = 0; i < fields.length; i++) {
+    if (String(isian[aktif][fields[i].id]).trim() == "") {
+      ambil("js-console").textContent = 'Mohon isi "' + fields[i].label + '" terlebih dahulu.';
+      return;
+    }
+  }
+
+  var baris = [];
+
+  // console tiruan: cetak ke Console browser dan ke kotak output
+  var konsolTiruan = {
+    log: function () {
+      console.log.apply(console, arguments);
+      baris.push(Array.prototype.join.call(arguments, " "));
+    }
+  };
+
+  try {
+    var program = new Function("console", ambil("js-code").textContent);
+    program(konsolTiruan);
+  } catch (err) {
+    baris.push("Error: " + err.message);
+  }
+
+  if (baris.length == 0) {
+    ambil("js-console").textContent = "(tidak ada output)";
+  } else {
+    ambil("js-console").textContent = baris.join("\n");
+  }
+}
+
+// buat tombol tab
+function buatTab(nomor) {
+  var tombol = document.createElement("button");
+  tombol.type = "button";
+  tombol.className = "js-tab";
+  tombol.setAttribute("role", "tab");
+  tombol.textContent = TUGAS[nomor].tab;
+  tombol.addEventListener("click", function () {
+    aktif = nomor;
+    tampilkanTugas();
+  });
+  ambil("js-tabs").appendChild(tombol);
+}
+
+for (var n = 0; n < TUGAS.length; n++) {
+  buatTab(n);
+}
+ambil("js-run").addEventListener("click", jalankan);
+tampilkanTugas();
+</script>
+
+</body>
+</html>
