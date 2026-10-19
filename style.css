@@ -1,4 +1,4 @@
-/* VARIABEL (ubah jarak global)*/
+/* VARIABEL*/
 :root {
   --burgundy: #68183b;
   --soft-pink: #f8dde6;
@@ -200,6 +200,7 @@ body:has(#about:target) .navlink[href="#about"],
 body:has(#skills:target) .navlink[href="#skills"],
 body:has(#journey:target) .navlink[href="#journey"],
 body:has(#project:target) .navlink[href="#project"],
+body:has(#javascript:target) .navlink[href="#javascript"],
 body:has(#contact:target) .navlink[href="#contact"] {
   color: var(--rose);
 }
@@ -210,6 +211,7 @@ body:has(#about:target) .navlink[href="#about"]::after,
 body:has(#skills:target) .navlink[href="#skills"]::after,
 body:has(#journey:target) .navlink[href="#journey"]::after,
 body:has(#project:target) .navlink[href="#project"]::after,
+body:has(#javascript:target) .navlink[href="#javascript"]::after,
 body:has(#contact:target) .navlink[href="#contact"]::after {
   content: "";
   position: absolute;
@@ -1022,4 +1024,108 @@ body:has(#contact:target) .navlink[href="#contact"]::after {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* TUGAS JAVASCRIPT */
+.js-container {
+  width: min(760px, 100%);
+  margin: var(--space-xl) auto 0;
+  padding: clamp(20px, 4vw, 40px);
+  text-align: center;
+}
+
+.js-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.js-tab {
+  min-height: 40px;
+  padding: 6px 18px;
+  border: 1px solid var(--rose);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--rose);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.js-tab[aria-selected="true"] {
+  background: var(--rose);
+  color: #fff;
+}
+
+.js-task {
+  color: var(--burgundy);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.js-desc {
+  margin-top: var(--space-xs);
+}
+
+.js-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  text-align: left;
+}
+
+.js-form label {
+  flex: 1 1 200px;
+  color: var(--burgundy);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.js-form input,
+.js-form select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 16px;
+  border: 1px solid rgba(107, 104, 112, 0.35);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--burgundy);
+}
+
+.js-code,
+.js-console {
+  margin: var(--space-md) 0 0;
+  padding: 16px 18px;
+  border-radius: 14px;
+  text-align: left;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.js-code {
+  background: #2a1020;
+  color: #f8dde6;
+}
+
+.js-console {
+  background: #fff;
+  border: 1px dashed var(--dusty-pink);
+  color: var(--burgundy);
+  min-height: 56px;
+}
+
+.js-run {
+  margin-top: var(--space-md);
+}
+
+.js-note {
+  margin-top: var(--space-md);
+  font-size: 14px;
 }
