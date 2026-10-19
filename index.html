@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Putri Raismayanti - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -22,8 +19,9 @@
       <a href="#skills" class="navlink">Skills</a>
       <a href="#project" class="navlink">Project</a>
       <a href="#journey" class="navlink">Journey</a>
+      <a href="#javascript" class="navlink">JavaScript</a>
       <a href="#contact" class="navlink">Contact</a>
-      <!-- Link CV belum dibuat: ganti href="#" dengan link CV, lalu tambahkan atribut download -->
+      <!-- Link CV belum dibuat: -->
       <a href="#" class="btn btn-primary download-cv"><img src="download0.png" alt="" />Download CV</a>
     </nav>
   </div>
@@ -230,6 +228,23 @@
   </div>
 </section>
 
+<!-- JAVASCRIPT -->
+<section id="javascript" class="section container center">
+  <span class="pill">Belajar JavaScript</span>
+  <h2 class="title">Tugas JavaScript</h2>
+  <p class="body-text sub">Pilih tab, isi datanya, lalu klik Jalankan. Hasilnya tampil di bawah dan juga di Console browser (F12).</p>
+  <div class="js-container card">
+    <div class="js-tabs" id="js-tabs" role="tablist" aria-label="Pilih tugas"></div>
+    <h3 class="js-task" id="js-task"></h3>
+    <p class="body-text js-desc" id="js-desc"></p>
+    <div class="js-form" id="js-form"></div>
+    <pre class="js-code"><code id="js-code"></code></pre>
+    <button type="button" id="js-run" class="btn btn-primary js-run">&#9654; Jalankan</button>
+    <pre class="js-console" id="js-console" aria-live="polite"></pre>
+    <p class="body-text js-note" id="js-note" hidden></p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="section container">
   <span class="pill">Get in Touch</span>
@@ -279,6 +294,173 @@
     <div class="footer-copy">© 2026 Putri Raismayanti.<br />All rights reserved.</div>
   </div>
 </footer>
+
+<script>
+// Kode tiap tugas dibuat sebagai teks: yang tampil di layar = yang dijalankan
+const teks = (v) => (String(v).trim() === "" ? '"..."' : JSON.stringify(String(v).trim()));
+const angka = (v) => (String(v).trim() !== "" && Number.isFinite(Number(v)) ? Number(v) : "...");
+
+const TUGAS = [
+  {
+    tab: "Masukkan Nama",
+    soal: "Isi nama dan kelas. Program menyimpannya di variabel lalu menampilkannya dengan console.log().",
+    fields: [
+      { id: "nama", label: "Nama lengkap", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
+      { id: "kelas", label: "Kelas", type: "text", value: "", placeholder: "Contoh: XI RPL" },
+    ],
+    kode: (v) => `let nama = ${teks(v.nama)};
+let kelas = ${teks(v.kelas)};
+
+console.log("Halo, " + nama + "!");
+console.log("Kelas: " + kelas);`,
+  },
+  {
+    tab: "Variabel & Tipe Data",
+    soal: "Variabel menyimpan data. Operator typeof menunjukkan tipe datanya: String, Number, atau Boolean.",
+    fields: [
+      { id: "nama", label: "Nama (String)", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
+      { id: "umur", label: "Umur (Number)", type: "number", value: "", placeholder: "Contoh: 16" },
+      { id: "aktif", label: "Siswa aktif? (Boolean)", type: "select", value: "", options: [["", "Pilih salah satu..."], ["true", "Ya (true)"], ["false", "Tidak (false)"]] },
+    ],
+    kode: (v) => `let nama = ${teks(v.nama)};   // String
+let umur = ${angka(v.umur)};   // Number
+let aktif = ${v.aktif || "..."};   // Boolean
+
+console.log(nama + " -> " + typeof nama);
+console.log(umur + " -> " + typeof umur);
+console.log(aktif + " -> " + typeof aktif);`,
+  },
+  {
+    tab: "Operator Aritmatika",
+    soal: "Isi dua angka, lalu lihat hasil penjumlahan, pengurangan, perkalian, pembagian, dan sisa bagi.",
+    fields: [
+      { id: "a", label: "Angka pertama", type: "number", value: "", placeholder: "Contoh: 20" },
+      { id: "b", label: "Angka kedua", type: "number", value: "", placeholder: "Contoh: 4" },
+    ],
+    kode: (v) => `let angka1 = ${angka(v.a)};
+let angka2 = ${angka(v.b)};
+
+console.log("Penjumlahan: " + (angka1 + angka2));
+console.log("Pengurangan: " + (angka1 - angka2));
+console.log("Perkalian: " + (angka1 * angka2));
+console.log("Pembagian: " + (angka1 / angka2));
+console.log("Sisa bagi: " + (angka1 % angka2));`,
+  },
+  {
+    tab: "if...else",
+    soal: "Program memilih tindakan berdasarkan kondisi: \"Lulus\" jika nilai minimal 75, selain itu \"Belum lulus\".",
+    fields: [{ id: "nilai", label: "Nilai", type: "number", value: "", placeholder: "Contoh: 90" }],
+    kode: (v) => `let nilai = ${angka(v.nilai)};
+
+if (nilai >= 75) {
+  console.log("Lulus");
+} else {
+  console.log("Belum lulus");
+}`,
+    catatan: "Coba ubah nilai menjadi 60 lalu jalankan lagi. Nilai 90 memenuhi kondisi nilai >= 75 (true), jadi blok if berjalan. Nilai 60 tidak memenuhi (false), jadi blok else yang berjalan. Kodenya sama, hanya nilainya yang berbeda.",
+  },
+  {
+    tab: "Tantangan Mini",
+    soal: "Simpan nama dan nilai siswa, lalu tampilkan nama dan status kelulusannya.",
+    fields: [
+      { id: "nama", label: "Nama siswa", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
+      { id: "nilai", label: "Nilai", type: "number", value: "", placeholder: "Contoh: 85" },
+    ],
+    kode: (v) => `let nama = ${teks(v.nama)};
+let nilai = ${angka(v.nilai)};
+let status;
+
+if (nilai >= 75) {
+  status = "Lulus";
+} else {
+  status = "Belum lulus";
+}
+
+console.log("Nama: " + nama);
+console.log("Nilai: " + nilai);
+console.log("Status: " + status);`,
+  },
+];
+
+const el = (id) => document.getElementById(id);
+const nilaiIsian = TUGAS.map((t) => Object.fromEntries(t.fields.map((f) => [f.id, f.value])));
+let aktif = 0;
+
+function tampilkanKode() {
+  el("js-code").textContent = TUGAS[aktif].kode(nilaiIsian[aktif]);
+}
+
+function tampilkanTugas() {
+  const t = TUGAS[aktif];
+  document.querySelectorAll(".js-tab").forEach((b, i) => b.setAttribute("aria-selected", String(i === aktif)));
+  el("js-task").textContent = t.tab;
+  el("js-desc").textContent = t.soal;
+  el("js-note").hidden = !t.catatan;
+  el("js-note").textContent = t.catatan || "";
+  el("js-console").textContent = "Klik Jalankan untuk melihat output...";
+
+  const form = el("js-form");
+  form.textContent = "";
+  t.fields.forEach((f) => {
+    const label = document.createElement("label");
+    label.textContent = f.label;
+    let input;
+    if (f.type === "select") {
+      input = document.createElement("select");
+      f.options.forEach(([val, teksOpsi]) => input.add(new Option(teksOpsi, val)));
+    } else {
+      input = document.createElement("input");
+      input.type = f.type;
+    }
+    if (f.placeholder) input.placeholder = f.placeholder;
+    input.value = nilaiIsian[aktif][f.id];
+    input.addEventListener("input", () => {
+      nilaiIsian[aktif][f.id] = input.value;
+      tampilkanKode();
+    });
+    label.appendChild(input);
+    form.appendChild(label);
+  });
+  tampilkanKode();
+}
+
+function jalankan() {
+  const kosong = TUGAS[aktif].fields.find((f) => String(nilaiIsian[aktif][f.id]).trim() === "");
+  if (kosong) {
+    el("js-console").textContent = "Mohon isi \"" + kosong.label + "\" terlebih dahulu.";
+    return;
+  }
+  const baris = [];
+  // console tiruan: mencetak ke Console browser dan ke kotak output
+  const konsolTiruan = {
+    log: (...args) => {
+      console.log(...args);
+      baris.push(args.join(" "));
+    },
+  };
+  try {
+    new Function("console", el("js-code").textContent)(konsolTiruan);
+  } catch (err) {
+    baris.push("Error: " + err.message);
+  }
+  el("js-console").textContent = baris.join("\n") || "(tidak ada output)";
+}
+
+TUGAS.forEach((t, i) => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "js-tab";
+  b.setAttribute("role", "tab");
+  b.textContent = t.tab;
+  b.addEventListener("click", () => {
+    aktif = i;
+    tampilkanTugas();
+  });
+  el("js-tabs").appendChild(b);
+});
+el("js-run").addEventListener("click", jalankan);
+tampilkanTugas();
+</script>
 
 </body>
 </html>
