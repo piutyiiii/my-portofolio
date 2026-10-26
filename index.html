@@ -3,46 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Putri Raismayanti, a Software Engineering student at SMK Negeri 1 Denpasar focused on web development, mobile apps, and UI/UX design." />
+  <meta name="theme-color" content="#68183b" />
   <title>Putri Raismayanti - Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <header class="site-header">
   <div class="container nav-bar">
-    <input type="checkbox" id="mobile-menu-toggle" class="menu-checkbox" aria-label="Open menu" />
-    <label for="mobile-menu-toggle" class="mobile-menu-toggle"><span></span><span></span><span></span></label>
-    <nav id="main-nav" class="main-nav">
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Main">
       <a href="#home" class="navlink">Home</a>
       <a href="#about" class="navlink">About</a>
       <a href="#skills" class="navlink">Skills</a>
-      <a href="#project" class="navlink">Project</a>
       <a href="#journey" class="navlink">Journey</a>
-      <a href="#javascript" class="navlink">JavaScript</a>
+      <a href="#project" class="navlink">Project</a>
+      <a href="javascript.html" class="navlink">JavaScript</a>
       <a href="#contact" class="navlink">Contact</a>
-      <!-- Link CV belum dibuat: -->
       <a href="#" class="btn btn-primary download-cv"><img src="download0.png" alt="" />Download CV</a>
     </nav>
   </div>
 </header>
 
 <main>
+
 <!-- HERO -->
 <section id="home" class="hero container">
   <div class="hero-text">
-    <div class="welcome"><img src="confetti0.png" alt="" /><span>Welcome to my portofolio</span></div>
-    <p class="hello">Hello i'm</p>
+    <div class="welcome"><img src="confetti0.png" alt="" /><span>Welcome to my portfolio</span></div>
+    <p class="hello">Hello I'm</p>
     <h1 class="name-big">Putri Raismayanti</h1>
     <p class="based">Based in Indonesia</p>
     <p class="tagline">Turning ideas into digital experiences</p>
-    <p class="body-text">Hi! I'm an eleventh-grade Software Engineering student at a Vocational High School, passionate about web development and continuously improving my technical skills in front-end technologies.</p>
+    <p class="body-text">Hi! I'm an eleventh-grade Software Engineering student at a vocational high school, passionate about web development and continuously improving my technical skills in front-end technologies.</p>
     <div class="hero-actions">
       <a href="#project" class="btn btn-primary"><img src="rocket0.png" alt="" />View My Project</a>
-      <a href="https://github.com/piutyiiii" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="git-hub15.png" alt="GitHub" /></a>
+      <a href="https://github.com/piutyiiii" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><img src="git-hub15.png" alt="" /></a>
     </div>
   </div>
-  <img class="hero-photo" src="foto.kelas.jpeg" alt="Putri Raismayanti" />
+  <img class="hero-photo" src="foto.kelas.jpeg" alt="Putri Raismayanti" width="400" height="450" />
 </section>
 
 <!-- ABOUT -->
@@ -51,24 +59,29 @@
   <h2 class="title">Get to Know Me</h2>
   <div class="about-grid">
     <p class="body-text lead">Hello! I'm Putri Raismayanti, an eleventh-grade Software Engineering student passionate about web development. I have experience with HTML, CSS, JavaScript, Figma, UI/UX, and both front-end and back-end development. Through projects and competitions, I continue to improve my skills and turn ideas into functional digital solutions. My goal is to grow as a Junior Developer while continuously learning and exploring new technologies.</p>
+
     <div class="about-cards">
       <div class="card info-card">
         <div class="info-item"><span class="info-icon"><img src="education1.png" alt="" /></span><div><h3>Education</h3><p>SMK Negeri 1 Denpasar</p></div></div>
         <div class="info-item"><span class="info-icon"><img src="source-code0.png" alt="" /></span><div><h3>Major</h3><p>Software Engineering (RPL)</p></div></div>
         <div class="info-item"><span class="info-icon"><img src="goal0.png" alt="" /></span><div><h3>Current focus</h3><p>Web dev, mobile, UI/UX and AI</p></div></div>
-        <div class="info-item"><span class="info-icon"><img src="rocket1.png" alt="" /></span><div><h3>Carrer goals</h3><p>Build useful, meaningful, user-friendly digital products.</p></div></div>
+        <div class="info-item"><span class="info-icon"><img src="rocket1.png" alt="" /></span><div><h3>Career goals</h3><p>Build useful, meaningful, user-friendly digital products.</p></div></div>
       </div>
+
       <div class="card learning-card">
         <h3>Currently learning <img src="down-left-arrow0.png" alt="" /></h3>
-        <div class="chips"><span>Flutter</span><span>Dart</span><span>MySQL</span><span>UI/UX design</span><span>AI &amp; machine learning</span><span>Git &amp; GitHub</span></div>
+        <div class="chips">
+          <span>Flutter</span><span>Dart</span><span>MySQL</span><span>UI/UX design</span><span>AI &amp; machine learning</span><span>Git &amp; GitHub</span>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="photo-row">
-    <img src="foto.padmasana.jpeg" alt="Foto padmasana" />
-    <img src="foto.teknik.jpeg" alt="Foto teknik" />
-    <img src="foto.lab.jpeg" alt="Foto lab" />
-    <img src="foto.kelas.jpeg" alt="Foto kelas" />
+    <img src="foto.padmasana.jpeg" alt="Putri at Padmasana" loading="lazy" />
+    <img src="foto.teknik.jpeg" alt="Putri during an engineering activity" loading="lazy" />
+    <img src="foto.lab.jpeg" alt="Putri in the computer lab" loading="lazy" />
+    <img src="foto.kelas.jpeg" alt="Putri in the classroom" loading="lazy" />
   </div>
 </section>
 
@@ -78,64 +91,8 @@
   <h2 class="title">Technologies I Use</h2>
   <p class="body-text sub">As an RPL student passionate about continuous learning, I constantly explore new tools and technologies to expand my capabilities. Here is an overview of the stack I actively use for coding, designing, and problem-solving, along with the real-world projects where I put these skills into practice.</p>
 </section>
-<div class="tech-marquee-wrap" id="tech-marquee">
-  <div class="tech-marquee-row">
-    <div class="tech-marquee-track">
-        <div class="tech-card"><img src="image-260.png" alt="HTML"><span>HTML</span></div>
-        <div class="tech-card"><img src="image-270.png" alt="CSS"><span>CSS</span></div>
-        <div class="tech-card"><img src="image-290.png" alt="Bootstrap"><span>Bootstrap</span></div>
-        <div class="tech-card"><img src="image-310.png" alt="JavaScript"><span>JavaScript</span></div>
-        <div class="tech-card"><img src="image-320.png" alt="Flutter"><span>Flutter</span></div>
-        <div class="tech-card"><img src="image-330.png" alt="MySQL"><span>MySQL</span></div>
-        <div class="tech-card"><img src="image-350.png" alt="Figma"><span>Figma</span></div>
-        <div class="tech-card"><img src="image-370.png" alt="Android Studio"><span>Android Studio</span></div>
-        <div class="tech-card"><img src="image-390.png" alt="Python"><span>Python</span></div>
-        <div class="tech-card"><img src="image-400.png" alt="C++"><span>C++</span></div>
-        <div class="tech-card"><img src="image-430.png" alt="GitHub"><span>GitHub</span></div>
-        <div class="tech-card"><img src="image-440.png" alt="VS Code"><span>VS Code</span></div>
-        <div class="tech-card"><img src="image-260.png" alt="HTML"><span>HTML</span></div>
-        <div class="tech-card"><img src="image-270.png" alt="CSS"><span>CSS</span></div>
-        <div class="tech-card"><img src="image-290.png" alt="Bootstrap"><span>Bootstrap</span></div>
-        <div class="tech-card"><img src="image-310.png" alt="JavaScript"><span>JavaScript</span></div>
-        <div class="tech-card"><img src="image-320.png" alt="Flutter"><span>Flutter</span></div>
-        <div class="tech-card"><img src="image-330.png" alt="MySQL"><span>MySQL</span></div>
-        <div class="tech-card"><img src="image-350.png" alt="Figma"><span>Figma</span></div>
-        <div class="tech-card"><img src="image-370.png" alt="Android Studio"><span>Android Studio</span></div>
-        <div class="tech-card"><img src="image-390.png" alt="Python"><span>Python</span></div>
-        <div class="tech-card"><img src="image-400.png" alt="C++"><span>C++</span></div>
-        <div class="tech-card"><img src="image-430.png" alt="GitHub"><span>GitHub</span></div>
-        <div class="tech-card"><img src="image-440.png" alt="VS Code"><span>VS Code</span></div>
-    </div>
-  </div>
-  <div class="tech-marquee-row">
-    <div class="tech-marquee-track reverse">
-        <div class="tech-card"><img src="image-460.png" alt="Java"><span>Java</span></div>
-        <div class="tech-card"><img src="image-470.png" alt="Kodular"><span>Kodular</span></div>
-        <div class="tech-card"><img src="image-630.png" alt="Scratch"><span>Scratch</span></div>
-        <div class="tech-card"><img src="image-650.png" alt="C"><span>C</span></div>
-        <div class="tech-card"><img src="image-660.png" alt="HTML"><span>HTML</span></div>
-        <div class="tech-card"><img src="image-670.png" alt="VS Code"><span>VS Code</span></div>
-        <div class="tech-card"><img src="image-680.png" alt="Python"><span>Python</span></div>
-        <div class="tech-card"><img src="image-690.png" alt="Bootstrap"><span>Bootstrap</span></div>
-        <div class="tech-card"><img src="image-700.png" alt="GitHub"><span>GitHub</span></div>
-        <div class="tech-card"><img src="image-710.png" alt="Figma"><span>Figma</span></div>
-        <div class="tech-card"><img src="image-720.png" alt="MySQL"><span>MySQL</span></div>
-        <div class="tech-card"><img src="image-730.png" alt="CSS"><span>CSS</span></div>
-        <div class="tech-card"><img src="image-460.png" alt="Java"><span>Java</span></div>
-        <div class="tech-card"><img src="image-470.png" alt="Kodular"><span>Kodular</span></div>
-        <div class="tech-card"><img src="image-630.png" alt="Scratch"><span>Scratch</span></div>
-        <div class="tech-card"><img src="image-650.png" alt="C"><span>C</span></div>
-        <div class="tech-card"><img src="image-660.png" alt="HTML"><span>HTML</span></div>
-        <div class="tech-card"><img src="image-670.png" alt="VS Code"><span>VS Code</span></div>
-        <div class="tech-card"><img src="image-680.png" alt="Python"><span>Python</span></div>
-        <div class="tech-card"><img src="image-690.png" alt="Bootstrap"><span>Bootstrap</span></div>
-        <div class="tech-card"><img src="image-700.png" alt="GitHub"><span>GitHub</span></div>
-        <div class="tech-card"><img src="image-710.png" alt="Figma"><span>Figma</span></div>
-        <div class="tech-card"><img src="image-720.png" alt="MySQL"><span>MySQL</span></div>
-        <div class="tech-card"><img src="image-730.png" alt="CSS"><span>CSS</span></div>
-    </div>
-  </div>
-</div>
+<!-- kartu teknologi dibuat otomatis oleh script.js -->
+<div class="tech-marquee-wrap" id="tech-marquee" aria-label="Technologies I use"></div>
 
 <!-- JOURNEY -->
 <section id="journey" class="section container">
@@ -143,12 +100,12 @@
   <h2 class="title">My Journey</h2>
   <p class="body-text">Key moments in my learning journey.</p>
   <div class="timeline">
-    <article class="step"><div class="card step-card"><span class="year">2025</span><img src="logo.skensa.jpeg" alt="" /><h3>Started at SMK Negeri 1 Denpasar</h3><p>Began my high school journey and joined the Software Engineering (RPL) major.</p><span class="tag">New Environment</span></div></article>
-    <article class="step"><div class="card step-card"><span class="year">2025</span><img src="logo.PPLG.png" alt="" /><h3>Learned RPL Basics</h3><p>Learned C, C++, and Java, explored VS Code, and started learning UI/UX design with Figma.</p><span class="tag">Build Foundation</span></div></article>
-    <article class="step"><div class="card step-card"><span class="year">2025</span><img src="logo.buildproje.jpeg" alt="" /><h3>Build Projects</h3><p>Building simple games and applications to practice and improve my programming skills.</p><span class="tag">Keep Growing</span></div></article>
-    <article class="step"><div class="card step-card"><span class="year">2026</span><img src="logo.eksplore.jpeg" alt="" /><h3>Exploring More</h3><p>Learned Flutter, HTML, CSS, Database, Python and started working on small projects</p><span class="tag">Keep Growing</span></div></article>
-    <article class="step"><div class="card step-card"><span class="year">2026</span><img src="logo.udayana.jpeg" alt="" /><h3>Joined Competition</h3><p>Participating in a UI design competition at Udayana to enhance my creativity, teamwork, and problem-solving skills.</p><span class="tag">Gain Experience</span></div></article>
-    <article class="step"><div class="card step-card"><span class="year">2026+</span><img src="logo.goals.jpeg" alt="" /><h3>Future Goals</h3><p>Keep improving my skills, creating meaningful projects, and growing into developer who builds useful digital products.</p><span class="tag">Bigger Dreams</span></div></article>
+    <article class="step"><div class="card step-card"><span class="year">2025</span><img src="logo.skensa.jpeg" alt="" loading="lazy" /><h3>Started at SMK Negeri 1 Denpasar</h3><p>Began my high school journey and joined the Software Engineering (RPL) major.</p><span class="tag">New Environment</span></div></article>
+    <article class="step"><div class="card step-card"><span class="year">2025</span><img src="logo.PPLG.png" alt="" loading="lazy" /><h3>Learned RPL Basics</h3><p>Learned C, C++, and Java, explored VS Code, and started learning UI/UX design with Figma.</p><span class="tag">Build Foundation</span></div></article>
+    <article class="step"><div class="card step-card"><span class="year">2025</span><img src="logo.buildproje.jpeg" alt="" loading="lazy" /><h3>Build Projects</h3><p>Building simple games and applications to practice and improve my programming skills.</p><span class="tag">Keep Growing</span></div></article>
+    <article class="step"><div class="card step-card"><span class="year">2026</span><img src="logo.eksplore.jpeg" alt="" loading="lazy" /><h3>Exploring More</h3><p>Learned Flutter, HTML, CSS, Database, Python and started working on small projects.</p><span class="tag">Keep Growing</span></div></article>
+    <article class="step"><div class="card step-card"><span class="year">2026</span><img src="logo.udayana.jpeg" alt="" loading="lazy" /><h3>Joined Competition</h3><p>Participating in a UI design competition at Udayana to enhance my creativity, teamwork, and problem-solving skills.</p><span class="tag">Gain Experience</span></div></article>
+    <article class="step"><div class="card step-card"><span class="year">2026+</span><img src="logo.goals.jpeg" alt="" loading="lazy" /><h3>Future Goals</h3><p>Keep improving my skills, creating meaningful projects, and growing into a developer who builds useful digital products.</p><span class="tag">Bigger Dreams</span></div></article>
   </div>
 </section>
 
@@ -157,43 +114,44 @@
   <span class="pill">Featured projects</span>
   <h2 class="title">My Projects</h2>
   <p class="body-text sub">Here are some of the projects I have worked on throughout my learning journey. Each project reflects my experience in web development, app development, UI/UX design, and problem-solving, while showcasing how I apply my skills to create meaningful and functional digital projects.</p>
+
   <div class="project-grid">
 
     <article class="card project">
-      <img src="p.printing.png" alt="Printing Website" />
+      <img src="p.printing.png" alt="Printing Website preview" loading="lazy" />
       <div class="project-head"><h3>Printing Website</h3><span class="pill sm">2026</span></div>
       <p>Modern website interface concept for presenting printing services, products, and company information.</p>
       <div class="tags"><span class="pill sm">Figma</span><span class="pill sm">UI/UX</span><span class="pill sm">Web Design</span></div>
       <div class="project-actions">
-        <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/2k05hBfGvFPVb6u2ivsUi3/printing?node-id=1-4&t=qsr6XnpGFhLMMIWW-1" target="_blank" rel="noopener noreferrer">View UI Design <img src="external-link0.png" alt="" /></a>
+        <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/2k05hBfGvFPVb6u2ivsUi3/printing?node-id=1-4&amp;t=qsr6XnpGFhLMMIWW-1" target="_blank" rel="noopener noreferrer">View UI Design <img src="external-link0.png" alt="" /></a>
         <a class="btn btn-outline btn-sm" href="https://github.com/piutyiiii/printing-ui-design" target="_blank" rel="noopener noreferrer"><img src="git-hub6.png" alt="" />GitHub</a>
       </div>
     </article>
 
     <article class="card project">
-      <img src="p.makeup.png" alt="Makeup Artist Website" />
+      <img src="p.makeup.png" alt="Makeup Artist Website preview" loading="lazy" />
       <div class="project-head"><h3>Makeup Artist Website</h3><span class="pill sm">2026</span></div>
       <p>Elegant beauty website concept for showcasing makeup styles, packages, testimonials, and appointments.</p>
       <div class="tags"><span class="pill sm">Figma</span><span class="pill sm">UI/UX</span><span class="pill sm">Web Design</span></div>
       <div class="project-actions">
-        <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/2k05hBfGvFPVb6u2ivsUi3/printing?node-id=732-936&t=qsr6XnpGFhLMMIWW-1" target="_blank" rel="noopener noreferrer">View UI Design <img src="external-link1.png" alt="" /></a>
+        <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/2k05hBfGvFPVb6u2ivsUi3/printing?node-id=732-936&amp;t=qsr6XnpGFhLMMIWW-1" target="_blank" rel="noopener noreferrer">View UI Design <img src="external-link1.png" alt="" /></a>
         <a class="btn btn-outline btn-sm" href="https://github.com/piutyiiii/makeup-artist-ui-design" target="_blank" rel="noopener noreferrer"><img src="git-hub7.png" alt="" />GitHub</a>
       </div>
     </article>
 
     <article class="card project">
-      <img src="p.thrift.png" alt="Thrift.co Website" />
+      <img src="p.thrift.png" alt="Thrift.co Website preview" loading="lazy" />
       <div class="project-head"><h3>Thrift.co Website</h3><span class="pill sm">2026</span></div>
       <p>A sustainable pre-loved fashion marketplace. The project focuses on combining sustainable fashion with AI-powered styling.</p>
-      <div class="tags"><span class="pill sm">Figma</span><span class="pill sm">UI/UX</span><span class="pill sm">Game Development</span></div>
+      <div class="tags"><span class="pill sm">Figma</span><span class="pill sm">UI/UX</span><span class="pill sm">Web Design</span></div>
       <div class="project-actions">
-        <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/yq1qISJsyOMm19OqUNKeP7/ITCC?node-id=1295-773&t=XoXeCgmKMGhm7Z8q-1" target="_blank" rel="noopener noreferrer">View Website <img src="external-link3.png" alt="" /></a>
+        <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/yq1qISJsyOMm19OqUNKeP7/ITCC?node-id=1295-773&amp;t=XoXeCgmKMGhm7Z8q-1" target="_blank" rel="noopener noreferrer">View Website <img src="external-link3.png" alt="" /></a>
         <a class="btn btn-outline btn-sm" href="https://github.com/piutyiiii/thrift.co-design" target="_blank" rel="noopener noreferrer"><img src="git-hub9.png" alt="" />GitHub</a>
       </div>
     </article>
 
     <article class="card project">
-      <img src="p.meong.png" alt="Meong-Meong Game" />
+      <img src="p.meong.png" alt="Meong-Meong Game preview" loading="lazy" />
       <div class="project-head"><h3>Meong-Meong Game</h3><span class="pill sm">2025</span></div>
       <p>A fast-paced endless cat run game where players navigate through challenging obstacles to achieve the highest score.</p>
       <div class="tags"><span class="pill sm">Scratch</span><span class="pill sm">UI/UX</span><span class="pill sm">Game Development</span></div>
@@ -204,7 +162,7 @@
     </article>
 
     <article class="card project">
-      <img src="p.fits.png" alt="FitsMatch" />
+      <img src="p.fits.png" alt="FitsMatch preview" loading="lazy" />
       <div class="project-head"><h3>FitsMatch</h3><span class="pill sm">2026</span></div>
       <p>FitsMatch AI analyzes live weather data and personal preferences to recommend stylish, weather-smart outfits using AI.</p>
       <div class="tags"><span class="pill sm">Antigravity</span><span class="pill sm">UI/UX</span><span class="pill sm">Web Development</span></div>
@@ -215,8 +173,8 @@
     </article>
 
     <article class="card project">
-      <img src="p.banten.jpeg" alt="BANTENIQ Game" />
-      <div class="project-head"><h3>BANTENIQ Game</h3><span class="pill sm">2026</span></div>
+      <img src="p.banten.jpeg" alt="BantenIQ Game preview" loading="lazy" />
+      <div class="project-head"><h3>BantenIQ Game</h3><span class="pill sm">2026</span></div>
       <p>An interactive game project combining creative visuals, engaging gameplay, and technical development.</p>
       <div class="tags"><span class="pill sm">Kodular</span><span class="pill sm">UI/UX</span><span class="pill sm">Game Development</span></div>
       <div class="project-actions">
@@ -228,239 +186,63 @@
   </div>
 </section>
 
-<!-- JAVASCRIPT -->
-<section id="javascript" class="section container center">
-  <span class="pill">Belajar JavaScript</span>
-  <h2 class="title">Tugas JavaScript</h2>
-  <p class="body-text sub">Pilih tab, isi datanya, lalu klik Jalankan. Hasilnya tampil di bawah dan juga di Console browser (F12).</p>
-  <div class="js-container card">
-    <div class="js-tabs" id="js-tabs" role="tablist" aria-label="Pilih tugas"></div>
-    <h3 class="js-task" id="js-task"></h3>
-    <p class="body-text js-desc" id="js-desc"></p>
-    <div class="js-form" id="js-form"></div>
-    <pre class="js-code"><code id="js-code"></code></pre>
-    <button type="button" id="js-run" class="btn btn-primary js-run">&#9654; Jalankan</button>
-    <pre class="js-console" id="js-console" aria-live="polite"></pre>
-    <p class="body-text js-note" id="js-note" hidden></p>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="section container">
   <span class="pill">Get in Touch</span>
   <div class="contact-grid">
+
     <div class="contact-left">
-      <h2 class="title">Let's Start<br />Conversation With Me!</h2>
+      <h2 class="title">Let's Start<br />a Conversation With Me!</h2>
       <p class="body-text">Feel free to reach out if you have any questions, opportunities, or just want to say hello. I'd love to hear from you!</p>
       <div class="card contact-card">
         <a class="contact-link" href="mailto:putriraismayanti@gmail.com"><span class="contact-icon-bg"><img src="email2.png" alt="" /></span><span><b>Email</b><small>putriraismayanti@gmail.com</small></span></a>
-        <a class="contact-link" href="https://wa.me/6285776002774" target="_blank" rel="noopener noreferrer"><span class="contact-icon-bg"><img src="whats-app1.png" alt="" /></span><span><b>WhatsApp</b><small>+62 85776002774</small></span></a>
+        <a class="contact-link" href="https://wa.me/6285776002774" target="_blank" rel="noopener noreferrer"><span class="contact-icon-bg"><img src="whats-app1.png" alt="" /></span><span><b>WhatsApp</b><small>+62 857-7600-2774</small></span></a>
         <a class="contact-link" href="https://instagram.com/putrirsmynti_" target="_blank" rel="noopener noreferrer"><span class="contact-icon-bg"><img src="instagram1.png" alt="" /></span><span><b>Instagram</b><small>putrirsmynti_</small></span></a>
-        <a class="contact-link" href="https://www.linkedin.com/in/ni-putu-putri-raismayanti/" target="_blank" rel="noopener noreferrer"><span class="contact-icon-bg"><img src="linked-in1.png" alt="" /></span><span><b>Linked In</b><small>Ni Putu Putri Raismayanti</small></span></a>
+        <a class="contact-link" href="https://www.linkedin.com/in/ni-putu-putri-raismayanti/" target="_blank" rel="noopener noreferrer"><span class="contact-icon-bg"><img src="linked-in1.png" alt="" /></span><span><b>LinkedIn</b><small>Ni Putu Putri Raismayanti</small></span></a>
       </div>
     </div>
 
-    <form class="card form-card" action="mailto:putriraismayanti@gmail.com" method="post" enctype="text/plain" rel="noopener noreferrer">
-      <div class="form-head"><span class="contact-icon-bg"><img src="paper-plane0.png" alt="" /></span><div><h3>Send me a Message</h3><p>I'm always open to new opportunities, collaborations, or just a friendly chat. Don't hesitate to reach out!</p></div></div>
-      <label for="contact-name">Name :</label>
-      <input type="text" id="contact-name" name="name" placeholder="Your name" required />
-      <label for="contact-email">Email :</label>
-      <input type="email" id="contact-email" name="email" placeholder="You@name.com" />
-      <label for="contact-message">Message :</label>
-      <textarea id="contact-message" name="text" rows="5" placeholder="How can I help you?" required></textarea>
-      <div class="form-actions">
-        <button type="submit" id="btn-send-email" class="btn btn-primary">Send via Email</button>
-        <button type="submit" id="btn-send-whatsapp" class="btn btn-outline" formaction="https://wa.me/6285776002774" formmethod="get" formenctype="application/x-www-form-urlencoded" formtarget="_blank">WhatsApp Me</button>
+    <div class="card form-card">
+      <div class="form-head">
+        <span class="contact-icon-bg"><img src="paper-plane0.png" alt="" /></span>
+        <div><h3>Send me a Message</h3><p>I'm always open to new opportunities, collaborations, or just a friendly chat. Don't hesitate to reach out!</p></div>
       </div>
-    </form>
+      <label for="contact-name">Name :</label>
+      <input type="text" id="contact-name" placeholder="Your name" autocomplete="name" />
+      <label for="contact-email">Email :</label>
+      <input type="email" id="contact-email" placeholder="you@name.com" autocomplete="email" />
+      <label for="contact-message">Message :</label>
+      <textarea id="contact-message" rows="5" placeholder="How can I help you?"></textarea>
+      <div class="form-actions">
+        <button type="button" id="btn-send-email" class="btn btn-primary">Send via Email</button>
+        <button type="button" id="btn-send-whatsapp" class="btn btn-outline">WhatsApp Me</button>
+      </div>
+      <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+    </div>
+
   </div>
 </section>
+
 </main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-content">
     <div class="footer-name">Putri Raismayanti</div>
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Footer">
       <a href="#about">About Me</a>
       <a href="#journey">My Journey</a>
       <a href="#project">Projects</a>
       <a href="#contact">Contacts</a>
     </nav>
     <div class="footer-social">
-      <a href="https://instagram.com/putrirsmynti_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="instagram2.png" alt="Instagram" /></a>
-      <a href="https://github.com/piutyiiii" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="git-hub14.png" alt="GitHub" /></a>
+      <a href="https://instagram.com/putrirsmynti_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="instagram2.png" alt="" /></a>
+      <a href="https://github.com/piutyiiii" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="git-hub14.png" alt="" /></a>
     </div>
     <div class="footer-copy">© 2026 Putri Raismayanti.<br />All rights reserved.</div>
   </div>
 </footer>
 
-<script>
-// Kode tiap tugas dibuat sebagai teks: yang tampil di layar = yang dijalankan
-const teks = (v) => (String(v).trim() === "" ? '"..."' : JSON.stringify(String(v).trim()));
-const angka = (v) => (String(v).trim() !== "" && Number.isFinite(Number(v)) ? Number(v) : "...");
-
-const TUGAS = [
-  {
-    tab: "Masukkan Nama",
-    soal: "Isi nama dan kelas. Program menyimpannya di variabel lalu menampilkannya dengan console.log().",
-    fields: [
-      { id: "nama", label: "Nama lengkap", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
-      { id: "kelas", label: "Kelas", type: "text", value: "", placeholder: "Contoh: XI RPL" },
-    ],
-    kode: (v) => `let nama = ${teks(v.nama)};
-let kelas = ${teks(v.kelas)};
-
-console.log("Halo, " + nama + "!");
-console.log("Kelas: " + kelas);`,
-  },
-  {
-    tab: "Variabel & Tipe Data",
-    soal: "Variabel menyimpan data. Operator typeof menunjukkan tipe datanya: String, Number, atau Boolean.",
-    fields: [
-      { id: "nama", label: "Nama (String)", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
-      { id: "umur", label: "Umur (Number)", type: "number", value: "", placeholder: "Contoh: 16" },
-      { id: "aktif", label: "Siswa aktif? (Boolean)", type: "select", value: "", options: [["", "Pilih salah satu..."], ["true", "Ya (true)"], ["false", "Tidak (false)"]] },
-    ],
-    kode: (v) => `let nama = ${teks(v.nama)};   // String
-let umur = ${angka(v.umur)};   // Number
-let aktif = ${v.aktif || "..."};   // Boolean
-
-console.log(nama + " -> " + typeof nama);
-console.log(umur + " -> " + typeof umur);
-console.log(aktif + " -> " + typeof aktif);`,
-  },
-  {
-    tab: "Operator Aritmatika",
-    soal: "Isi dua angka, lalu lihat hasil penjumlahan, pengurangan, perkalian, pembagian, dan sisa bagi.",
-    fields: [
-      { id: "a", label: "Angka pertama", type: "number", value: "", placeholder: "Contoh: 20" },
-      { id: "b", label: "Angka kedua", type: "number", value: "", placeholder: "Contoh: 4" },
-    ],
-    kode: (v) => `let angka1 = ${angka(v.a)};
-let angka2 = ${angka(v.b)};
-
-console.log("Penjumlahan: " + (angka1 + angka2));
-console.log("Pengurangan: " + (angka1 - angka2));
-console.log("Perkalian: " + (angka1 * angka2));
-console.log("Pembagian: " + (angka1 / angka2));
-console.log("Sisa bagi: " + (angka1 % angka2));`,
-  },
-  {
-    tab: "if...else",
-    soal: "Program memilih tindakan berdasarkan kondisi: \"Lulus\" jika nilai minimal 75, selain itu \"Belum lulus\".",
-    fields: [{ id: "nilai", label: "Nilai", type: "number", value: "", placeholder: "Contoh: 90" }],
-    kode: (v) => `let nilai = ${angka(v.nilai)};
-
-if (nilai >= 75) {
-  console.log("Lulus");
-} else {
-  console.log("Belum lulus");
-}`,
-    catatan: "Coba ubah nilai menjadi 60 lalu jalankan lagi. Nilai 90 memenuhi kondisi nilai >= 75 (true), jadi blok if berjalan. Nilai 60 tidak memenuhi (false), jadi blok else yang berjalan. Kodenya sama, hanya nilainya yang berbeda.",
-  },
-  {
-    tab: "Tantangan Mini",
-    soal: "Simpan nama dan nilai siswa, lalu tampilkan nama dan status kelulusannya.",
-    fields: [
-      { id: "nama", label: "Nama siswa", type: "text", value: "", placeholder: "Contoh: Putri Raismayanti" },
-      { id: "nilai", label: "Nilai", type: "number", value: "", placeholder: "Contoh: 85" },
-    ],
-    kode: (v) => `let nama = ${teks(v.nama)};
-let nilai = ${angka(v.nilai)};
-let status;
-
-if (nilai >= 75) {
-  status = "Lulus";
-} else {
-  status = "Belum lulus";
-}
-
-console.log("Nama: " + nama);
-console.log("Nilai: " + nilai);
-console.log("Status: " + status);`,
-  },
-];
-
-const el = (id) => document.getElementById(id);
-const nilaiIsian = TUGAS.map((t) => Object.fromEntries(t.fields.map((f) => [f.id, f.value])));
-let aktif = 0;
-
-function tampilkanKode() {
-  el("js-code").textContent = TUGAS[aktif].kode(nilaiIsian[aktif]);
-}
-
-function tampilkanTugas() {
-  const t = TUGAS[aktif];
-  document.querySelectorAll(".js-tab").forEach((b, i) => b.setAttribute("aria-selected", String(i === aktif)));
-  el("js-task").textContent = t.tab;
-  el("js-desc").textContent = t.soal;
-  el("js-note").hidden = !t.catatan;
-  el("js-note").textContent = t.catatan || "";
-  el("js-console").textContent = "Klik Jalankan untuk melihat output...";
-
-  const form = el("js-form");
-  form.textContent = "";
-  t.fields.forEach((f) => {
-    const label = document.createElement("label");
-    label.textContent = f.label;
-    let input;
-    if (f.type === "select") {
-      input = document.createElement("select");
-      f.options.forEach(([val, teksOpsi]) => input.add(new Option(teksOpsi, val)));
-    } else {
-      input = document.createElement("input");
-      input.type = f.type;
-    }
-    if (f.placeholder) input.placeholder = f.placeholder;
-    input.value = nilaiIsian[aktif][f.id];
-    input.addEventListener("input", () => {
-      nilaiIsian[aktif][f.id] = input.value;
-      tampilkanKode();
-    });
-    label.appendChild(input);
-    form.appendChild(label);
-  });
-  tampilkanKode();
-}
-
-function jalankan() {
-  const kosong = TUGAS[aktif].fields.find((f) => String(nilaiIsian[aktif][f.id]).trim() === "");
-  if (kosong) {
-    el("js-console").textContent = "Mohon isi \"" + kosong.label + "\" terlebih dahulu.";
-    return;
-  }
-  const baris = [];
-  // console tiruan: mencetak ke Console browser dan ke kotak output
-  const konsolTiruan = {
-    log: (...args) => {
-      console.log(...args);
-      baris.push(args.join(" "));
-    },
-  };
-  try {
-    new Function("console", el("js-code").textContent)(konsolTiruan);
-  } catch (err) {
-    baris.push("Error: " + err.message);
-  }
-  el("js-console").textContent = baris.join("\n") || "(tidak ada output)";
-}
-
-TUGAS.forEach((t, i) => {
-  const b = document.createElement("button");
-  b.type = "button";
-  b.className = "js-tab";
-  b.setAttribute("role", "tab");
-  b.textContent = t.tab;
-  b.addEventListener("click", () => {
-    aktif = i;
-    tampilkanTugas();
-  });
-  el("js-tabs").appendChild(b);
-});
-el("js-run").addEventListener("click", jalankan);
-tampilkanTugas();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
