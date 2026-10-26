@@ -103,7 +103,7 @@ function ambil(id) {
   return document.getElementById(id);
 }
 
-// ubah isian jadi teks berkutip, kalau kosong tampil "..."
+// ubah isian jadi teks berkutip, kalau kosong tampil 
 function teks(nilai) {
   nilai = String(nilai).trim();
   if (nilai == "") {
@@ -112,7 +112,7 @@ function teks(nilai) {
   return JSON.stringify(nilai);
 }
 
-// ubah isian jadi angka, kalau kosong / bukan angka tampil ...
+// ubah isian jadi angka, kalau kosong / bukan angka tampil 
 function angka(nilai) {
   nilai = String(nilai).trim();
   if (nilai != "" && isFinite(Number(nilai))) {
@@ -233,6 +233,60 @@ if (nilai >= 75) {
 console.log("Nama: " + nama);
 console.log("Nilai: " + nilai);
 console.log("Status: " + status);`;
+    }
+  },
+  {
+    tab: "Luas Segitiga",
+    judul: "Menghitung Luas Segitiga",
+    soal: "Hitung luas segitiga dengan rumus: luas = 1/2 x alas x tinggi.",
+    fields: [
+      { id: "alas", label: "Alas", type: "number", value: "", placeholder: "Contoh: 10" },
+      { id: "tinggi", label: "Tinggi", type: "number", value: "", placeholder: "Contoh: 6" }
+    ],
+    kode: function (v) {
+      return `let alas = ${angka(v.alas)};
+let tinggi = ${angka(v.tinggi)};
+
+let luas = 0.5 * alas * tinggi;
+
+console.log("Alas: " + alas);
+console.log("Tinggi: " + tinggi);
+console.log("Luas segitiga: " + luas);`;
+    }
+  },
+  {
+    tab: "Luas Lingkaran",
+    judul: "Menghitung Luas Lingkaran",
+    soal: "Hitung luas lingkaran dengan rumus: luas = \u03C0 x jari-jari x jari-jari (\u03C0 = Math.PI).",
+    fields: [
+      { id: "r", label: "Jari-jari", type: "number", value: "", placeholder: "Contoh: 7" }
+    ],
+    kode: function (v) {
+      return `let jariJari = ${angka(v.r)};
+
+let luas = Math.PI * jariJari * jariJari;
+
+console.log("Jari-jari: " + jariJari);
+console.log("Luas lingkaran: " + luas.toFixed(2));`;
+    }
+  },
+  {
+    tab: "Luas Persegi Panjang",
+    judul: "Menghitung Luas Persegi Panjang",
+    soal: "Hitung luas persegi panjang dengan rumus: luas = panjang x lebar.",
+    fields: [
+      { id: "panjang", label: "Panjang", type: "number", value: "", placeholder: "Contoh: 12" },
+      { id: "lebar", label: "Lebar", type: "number", value: "", placeholder: "Contoh: 5" }
+    ],
+    kode: function (v) {
+      return `let panjang = ${angka(v.panjang)};
+let lebar = ${angka(v.lebar)};
+
+let luas = panjang * lebar;
+
+console.log("Panjang: " + panjang);
+console.log("Lebar: " + lebar);
+console.log("Luas persegi panjang: " + luas);`;
     }
   }
 ];
